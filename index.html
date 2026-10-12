@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeKa Reload - Top Up & Payment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        ::-webkit-scrollbar { display: none; }
+        input[type="number"]::-webkit-inner-spin-button, 
+        input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-struk { animation: slideUp 0.3s ease-out forwards; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white flex justify-center">
+
+    <div class="w-full max-w-md bg-gray-900 min-h-screen relative shadow-2xl pb-20">
+        
+        <!-- Header -->
+        <header class="p-4 flex justify-between items-center bg-gray-900 sticky top-0 z-50 border-b border-gray-800">
+            <div class="flex items-center gap-3">
+                <!-- LOGO PROFILE DIGANTI DENGAN GAMBAR -->
+                <div class="w-10 h-10 rounded-full flex items-center justify-center bg-gray-800 border border-gray-700 shadow-lg overflow-hidden">
+                    <!-- Pastikan file gambar logo Bapak bernama "logo.png" dan diupload ke folder yang sama -->
+                    <img src="logo.png" alt="DeKa Reload" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <h1 class="font-bold text-base leading-tight">DeKa Reload</h1>
+                    <p class="text-xs text-green-400 flex items-center gap-1">
+                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Buka 24 Jam
+                    </p>
+                </div>
+            </div>
+            <button class="text-gray-400 hover:text-white text-xl">
+                <i class="fas fa-bell"></i>
+            </button>
+        </header>
+
+        <!-- Banner Promo Slider -->
+        <section class="p-4">
+            <div class="relative w-full overflow-hidden rounded-2xl shadow-lg h-36 border border-gray-700">
+                <div id="carousel-inner" class="flex transition-transform duration-500 ease-in-out w-full h-full">
+                    <!-- Banner 1 -->
+                    <div class="w-full h-full flex-shrink-0">
+                        <img src="banner1.png" alt="Flash Sale Kuota" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Banner 2 -->
+                    <div class="w-full h-full flex-shrink-0">
+                        <img src="banner2.png" alt="Top Up E-Wallet" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <!-- Indikator Titik (Dots) -->
+                <div class="absolute bottom-2 w-full flex justify-center gap-1.5 z-10">
+                    <span class="w-2 h-2 rounded-full bg-white/80 transition-all dot-indicator shadow"></span>
+                    <span class="w-2 h-2 rounded-full bg-white/30 transition-all dot-indicator shadow"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Utama / Category Grid -->
+        <section class="px-4 py-2">
+            <h3 class="font-bold text-sm text-gray-400 mb-3 uppercase tracking-wider">PILIH PRODUK</h3>
+            
+            <div class="grid grid-cols-4 gap-4">
+                
+                <!-- Telkomsel -->
+                <a href="transaksi.html?provider=Telkomsel" class="flex flex-col items-center gap-2 group">
+                    <div class="w-14 h-14 bg-gray-800 border border-gray-700 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-lg overflow-hidden group-hover:scale-105 group-hover:border-red-500/50">
+                        <img src="https://lh3.googleusercontent.com/d/1Z-ZQuFff3Ty1iGaiY-U13R-sL6Yy1J7t" alt="Telkomsel" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[11px] text-gray-300 font-medium">Telkomsel</span>
+                </a>
+
+                <!-- Indosat -->
+                <a href="transaksi.html?provider=KUOTA INI Indosat" class="flex flex-col items-center gap-2 group">
+                    <div class="w-14 h-14 bg-gray-800 border border-gray-700 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-lg overflow-hidden group-hover:scale-105 group-hover:border-yellow-500/50">
+                        <img src="https://lh3.googleusercontent.com/d/1WJ7ZccDWmHxvHV5ZFxxdLXEqITYYR3zf" alt="Indosat" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[11px] text-gray-300 font-medium">Indosat</span>
+                </a>
+
+                <!-- BY.U -->
+                <a href="transaksi.html?provider=KUOTA BY By.U" class="flex flex-col items-center gap-2 group">
+                    <div class="w-14 h-14 bg-gray-800 border border-gray-700 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-lg overflow-hidden group-hover:scale-105 group-hover:border-cyan-500/50">
+                        <img src="https://lh3.googleusercontent.com/d/1AwUwRBsjlBayp5lDhko1yPA9IXYHyHVd" alt="By.U" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[11px] text-gray-300 font-medium">By.U</span>
+                </a>
+
+                <!-- XL -->
+                <a href="transaksi.html?provider=XL" class="flex flex-col items-center gap-2 group">
+                    <div class="w-14 h-14 bg-gray-800 border border-gray-700 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-lg overflow-hidden group-hover:scale-105 group-hover:border-blue-500/50">
+                        <img src="https://lh3.googleusercontent.com/d/1CWc5DlujKGcijDWRzNKRsgdByemL6JuO" alt="XL" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[11px] text-gray-300 font-medium">XL</span>
+                </a>
+
+                <!-- Axis -->
+                <a href="transaksi.html?provider=AXIS" class="flex flex-col items-center gap-2 group">
+                    <div class="w-14 h-14 bg-gray-800 border border-gray-700 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-lg overflow-hidden group-hover:scale-105 group-hover:border-purple-500/50">
+                        <img src="https://lh3.googleusercontent.com/d/1IrFIrT35QEJx6NPsHdsSnbDkjFHS5R83" alt="Axis" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[11px] text-gray-300 font-medium">Axis</span>
+                </a>
+
+                <!-- Tri -->
+                <a href="transaksi.html?provider=TRI" class="flex flex-col items-center gap-2 group">
+                    <div class="w-14 h-14 bg-gray-800 border border-gray-700 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-lg overflow-hidden group-hover:scale-105 group-hover:border-orange-500/50">
+                        <img src="https://lh3.googleusercontent.com/d/1xLOcIFwS-E5cpw7TxRGlouV7cOZqUHC8" alt="Tri" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[11px] text-gray-300 font-medium">Tri</span>
+                </a>
+
+                <!-- Smartfren -->
+                <a href="transaksi.html?provider=SMARTFREN" class="flex flex-col items-center gap-2 group">
+                    <div class="w-14 h-14 bg-gray-800 border border-gray-700 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-lg overflow-hidden group-hover:scale-105 group-hover:border-pink-500/50">
+                        <img src="https://lh3.googleusercontent.com/d/1cWa6gihDQaBJYNfjFdnOujiIweoeZp2l" alt="Smartfren" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[11px] text-gray-300 font-medium">Smartfren</span>
+                </a>
+
+                <!-- PLN Token -->
+                <a href="transaksi.html?provider=TOKEN PLN" class="flex flex-col items-center gap-2 group">
+                    <div class="w-14 h-14 bg-gray-800 border border-gray-700 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-lg overflow-hidden group-hover:scale-105 group-hover:border-yellow-400/50">
+                        <img src="https://lh3.googleusercontent.com/d/1tyTu0mvaYjKG1ZgPF750mOBAKM6qpHzS" alt="PLN Token" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[11px] text-gray-300 font-medium">PLN Token</span>
+                </a>
+
+                <!-- Top Up E-Wallet -->
+                <a href="transaksi.html?provider=TOP UP E-WALLET" class="flex flex-col items-center gap-2 group">
+                    <div class="w-14 h-14 bg-gray-800 border border-gray-700 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-lg overflow-hidden group-hover:scale-105 group-hover:border-emerald-500/50">
+                        <img src="https://lh3.googleusercontent.com/d/15ja1tqi18l__WEiSYn8VB-D8SDeWeauo" alt="E-Wallet" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[11px] text-gray-300 font-medium text-center">E-Wallet</span>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Informasi Layanan -->
+        <section class="p-4 mt-2">
+            <div class="bg-gray-800 border border-gray-700 rounded-2xl p-4 space-y-3">
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-shield-alt text-xl text-blue-400"></i>
+                    <div>
+                        <h4 class="font-bold text-xs">Transaksi Aman & Terpercaya</h4>
+                        <p class="text-[10px] text-gray-400">Didukung sistem otomatis 24 jam nonstop.</p>
+                    </div>
+                </div>
+                <div class="border-t border-gray-700 pt-3 flex items-center gap-3">
+                    <i class="fas fa-headset text-xl text-green-400"></i>
+                    <div>
+                        <h4 class="font-bold text-xs">Bantuan Customer Service</h4>
+                        <p class="text-[10px] text-gray-400">Hubungi kami jika ada kendala pengisian.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation Bar -->
+        <nav class="fixed bottom-0 w-full max-w-md bg-gray-900/90 backdrop-blur-md border-t border-gray-800 p-2 flex justify-around items-center z-50">
+            <a href="index.html" class="flex flex-col items-center gap-1 text-blue-500">
+                <i class="fas fa-home text-lg"></i>
+                <span class="text-[10px] font-medium">Beranda</span>
+            </a>
+            <button onclick="bukaRiwayat()" class="flex flex-col items-center gap-1 text-gray-500 hover:text-gray-300">
+                <i class="fas fa-history text-lg"></i>
+                <span class="text-[10px] font-medium">Riwayat Transaksi</span>
+            </button>
+        </nav>
+
+        <!-- MODAL RIWAYAT TRANSAKSI -->
+        <div id="modal-riwayat" class="fixed inset-0 bg-gray-900 z-[60] flex-col hidden transition-opacity duration-300">
+            <header class="flex items-center justify-between p-4 sticky top-0 bg-gray-900 border-b border-gray-800 shadow-md">
+                <div class="flex items-center gap-3">
+                    <button onclick="tutupRiwayat()" class="text-gray-400 hover:text-white active:scale-90 transition">
+                        <i class="fas fa-arrow-left text-xl"></i>
+                    </button>
+                    <h1 class="font-bold text-lg">Riwayat Transaksi</h1>
+                </div>
+            </header>
+            <div id="list-riwayat" class="flex-1 overflow-y-auto p-3 space-y-2 pb-10 bg-gray-900">
+                <!-- Akan dimuat oleh JS -->
+            </div>
+        </div>
+
+        <!-- MODAL PASSWORD VERIFIKASI -->
+        <div id="modal-password" class="fixed inset-0 bg-gray-900/95 z-[70] hidden flex-col items-center justify-center p-4 backdrop-blur-sm transition-opacity">
+            <div class="bg-gray-800 border border-gray-700 rounded-2xl p-6 w-full max-w-sm shadow-2xl text-center relative animate-struk">
+                <button onclick="tutupPassword()" class="absolute top-3 right-4 text-gray-400 hover:text-white text-lg"><i class="fas fa-times"></i></button>
+                
+                <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-blue-500/30">
+                    <i class="fas fa-lock text-2xl text-blue-400"></i>
+                </div>
+                
+                <h3 class="font-bold text-lg text-white mb-1">Verifikasi Keamanan</h3>
+                <p class="text-[11px] text-gray-400 mb-4 leading-relaxed">Demi privasi, masukkan <b class="text-blue-400">3 Angka yang disensor</b> dari nomor tujuan untuk membuka halaman ini.</p>
+
+                <!-- Menampilkan Petunjuk Nomor -->
+                <div class="bg-gray-900 p-3 rounded-xl border border-gray-700 mb-5 font-mono text-sm text-gray-300 flex items-center justify-center gap-2" id="teks-petunjuk-password">
+                    <!-- Format akan diisi JS -->
+                </div>
+
+                <input type="number" id="input-password" class="w-full bg-gray-900 border border-gray-600 text-center text-2xl font-bold text-white rounded-xl p-3 mb-2 focus:outline-none focus:border-blue-500 tracking-[0.5em]" placeholder="•••" maxlength="3" oninput="if(this.value.length > 3) this.value = this.value.slice(0,3);">
+                
+                <p id="error-password" class="text-[11px] text-red-400 font-bold h-4 mb-3"></p>
+
+                <button onclick="cekPassword()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-xl transition shadow-lg active:scale-95">Buka Transaksi</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SCRIPT LOGIKA -->
+    <script>
+        const webAppUrl = "https://script.google.com/macros/s/AKfycbwVdzWWQZ8o1cUYnnWgmexuCOMl9wL2iw-l0GxPtkzvOGEKczoXgcmSqBcsKZUGrmDKiA/exec";
+
+        function formatRupiah(angka) {
+            return 'Rp ' + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
+
+        function maskNomor(n) {
+            if (!n) return '-';
+            let strN = n.toString(); 
+            if (strN.length < 7) return strN;
+            return strN.substring(0, strN.length - 5) + "***" + strN.substring(strN.length - 2);
+        }
+
+        // ==========================================
+        // FITUR KEAMANAN PASSWORD TRANSAKSI
+        // ==========================================
+        let targetUrlPass = "";
+        let correctPass = "";
+
+        function bukaPassword(fullNomor, targetUrl) {
+            targetUrlPass = targetUrl;
+            let strN = fullNomor.toString().trim();
+
+            if(strN.length < 7) {
+                window.location.href = targetUrl;
+                return;
+            }
+
+            let prefix = strN.substring(0, strN.length - 5);
+            let suffix = strN.substring(strN.length - 2);
+            correctPass = strN.substring(strN.length - 5, strN.length - 2);
+
+            document.getElementById('teks-petunjuk-password').innerHTML = `
+                <span>${prefix}</span>
+                <span class="text-blue-400 font-bold tracking-[0.2em] px-1">***</span>
+                <span>${suffix}</span>
+            `;
+            
+            document.getElementById('input-password').value = '';
+            document.getElementById('error-password').innerText = '';
+
+            document.getElementById('modal-password').classList.remove('hidden');
+            document.getElementById('modal-password').classList.add('flex');
+            setTimeout(() => document.getElementById('input-password').focus(), 100);
+        }
+
+        function tutupPassword() {
+            document.getElementById('modal-password').classList.add('hidden');
+            document.getElementById('modal-password').classList.remove('flex');
+        }
+
+        function cekPassword() {
+            let val = document.getElementById('input-password').value;
+            if(val === correctPass) {
+                window.location.href = targetUrlPass;
+            } else {
+                document.getElementById('error-password').innerText = 'Kode Salah! Masukkan 3 angka tengah yang disensor.';
+            }
+        }
+
+        // ==========================================
+        // RIWAYAT TRANSAKSI
+        // ==========================================
+        function formatTanggalIndo(dateStr) {
+            try {
+                let d = new Date(dateStr);
+                if (isNaN(d)) return dateStr;
+                let formatOptions = { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Jakarta' };
+                return d.toLocaleString('id-ID', formatOptions).replace(/\./g, ':') + ' WIB';
+            } catch(e) {
+                return dateStr;
+            }
+        }
+
+        function bukaRiwayat() {
+            document.getElementById('modal-riwayat').classList.remove('hidden');
+            document.getElementById('modal-riwayat').classList.add('flex');
+            muatRiwayat();
+        }
+
+        function tutupRiwayat() {
+            document.getElementById('modal-riwayat').classList.add('hidden');
+            document.getElementById('modal-riwayat').classList.remove('flex');
+        }
+
+        async function muatRiwayat() {
+            const listContainer = document.getElementById('list-riwayat');
+            listContainer.innerHTML = '<div class="text-center text-gray-500 py-10"><i class="fas fa-spinner fa-spin text-3xl mb-3"></i><p class="text-sm">Mengambil riwayat terbaru...</p></div>';
+            
+            try {
+                let res = await fetch(`${webAppUrl}?action=getProducts&sub_action=getRiwayat`);
+                let data = await res.json();
+
+                if (data.length === 0) {
+                    listContainer.innerHTML = '<div class="text-center text-gray-500 py-10">Belum ada transaksi.</div>';
+                    return;
+                }
+
+                listContainer.innerHTML = '';
+                
+                data.forEach(item => {
+                    let st = item.status ? item.status.toUpperCase() : 'PROSES';
+                    let bg = st === 'SUKSES' || st === 'SUCCESS' ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' : (st === 'GAGAL' || st === 'FAILED' ? 'bg-red-500/20 text-red-400 border-red-500/30' : 'bg-blue-500/20 text-blue-400 border-blue-500/30');
+                    if(st === 'SUCCESS') st = 'SUKSES';
+                    if(st === 'FAILED') st = 'GAGAL';
+
+                    let namaProd = item.produk || '-';
+                    let prov = item.provider || '-';
+                    let tglCantik = formatTanggalIndo(item.tanggal);
+
+                    let targetUrl = `bayar.html?id_trx=${item.id}&produk=${encodeURIComponent(namaProd)}&nomor=${encodeURIComponent(item.nomor)}&total_unik=${item.harga}&provider=${encodeURIComponent(prov)}`;
+
+                    let card = document.createElement('div');
+                    card.className = "bg-gray-800 border border-gray-700 rounded-xl p-3 flex justify-between items-center transition hover:bg-gray-700 cursor-pointer block mb-2";
+                    card.setAttribute("onclick", `bukaPassword('${item.nomor}', '${targetUrl}')`);
+                    
+                    card.innerHTML = `
+                        <div class="flex-1 pr-3">
+                            <h4 class="text-sm font-bold text-gray-200 truncate">${namaProd}</h4>
+                            <p class="text-xs text-gray-400 font-mono mt-0.5">${maskNomor(item.nomor)}</p>
+                            <p class="text-[10px] text-gray-500 mt-1"><i class="far fa-clock mr-1"></i>${tglCantik}</p>
+                        </div>
+                        <div class="text-right flex flex-col items-end gap-1.5">
+                            <span class="text-[10px] font-bold px-2 py-0.5 rounded border ${bg}">${st}</span>
+                            <span class="text-sm font-bold text-gray-300">${formatRupiah(item.harga)}</span>
+                        </div>
+                    `;
+                    listContainer.appendChild(card);
+                });
+            } catch (err) {
+                console.error(err);
+                listContainer.innerHTML = `
+                    <div class="text-center text-red-400 py-10 px-4">
+                        <i class="fas fa-exclamation-triangle text-3xl mb-2"></i>
+                        <p class="text-sm font-bold">Error Terdeteksi:</p>
+                        <p class="text-xs break-words font-mono mt-2 bg-gray-800 p-2 rounded text-left text-red-300 border border-red-500/30">${err.message || err}</p>
+                    </div>`;
+            }
+        }
+        // ==========================================
+        // FITUR BANNER SLIDER OTOMATIS
+        // ==========================================
+        const carouselInner = document.getElementById('carousel-inner');
+        const dots = document.querySelectorAll('.dot-indicator');
+        let currentSlide = 0;
+        const totalSlides = 2; // Sesuai jumlah banner
+
+        function updateCarousel() {
+            // Menggeser posisi banner
+            carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update warna indikator titik
+            dots.forEach((dot, index) => {
+                if(index === currentSlide) {
+                    dot.classList.remove('bg-white/30');
+                    dot.classList.add('bg-white/80', 'w-4');
+                } else {
+                    dot.classList.add('bg-white/30');
+                    dot.classList.remove('bg-white/80', 'w-4');
+                }
+            });
+        }
+
+        // Jalankan otomatis setiap 3.5 detik (3500 milidetik)
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }, 3500);
+    </script>
+</body>
+</html>
