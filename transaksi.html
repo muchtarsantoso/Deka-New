@@ -407,7 +407,9 @@
             if (!this.classList.contains('cursor-not-allowed')) {
                 let nomorTujuan = inputNomor.value;
                 let idTrx = Math.random().toString(36).substring(2, 10).toUpperCase();
-                let kodeUnik = Math.floor(Math.random() * 499) + 100;
+                // UBAH NOMINAL UNIK KE 1-100 SESUAI PERMINTAAN
+let kodeUnik = Math.floor(Math.random() * 100) + 1; 
+
                 let totalUnik = hargaTerpilih + kodeUnik;
 
                 tombolPesan.disabled = true;
