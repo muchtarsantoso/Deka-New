@@ -200,7 +200,7 @@
             aturTampilanProvider(providerTarget);
           
             try {
-                const response = await fetch(`${webAppUrl}?action=getProducts&provider=${encodeURIComponent(providerTarget)}`); 
+                const response = await fetch(`${webAppUrl}?action=getProducts&provider=${encodeURIComponent(providerTarget)}&diskon=ya`);  
                 semuaProduk = await response.json();
             
                 if (semuaProduk.length === 0) {
