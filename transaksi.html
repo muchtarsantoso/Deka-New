@@ -416,7 +416,8 @@ let kodeUnik = Math.floor(Math.random() * 100) + 1;
                 tombolPesan.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memproses...';
 
                 try {
-                    let urlKirim = `${webAppUrl}?action=addTransaction&id_trx=${idTrx}&kode_produk=${encodeURIComponent(kodeProdukTerpilih)}&no_hp=${encodeURIComponent(nomorTujuan)}&total_bayar=${hargaTerpilih}&total_unik=${totalUnik}`;
+                    let urlKirim = `${webAppUrl}?action=addTransaction&id_trx=${idTrx}&kode_produk=${encodeURIComponent(kodeProdukTerpilih)}&nama_produk=${encodeURIComponent(namaProdukTerpilih)}&no_hp=${encodeURIComponent(nomorTujuan)}&total_bayar=${hargaTerpilih}&total_unik=${totalUnik}`;
+
                     
                     await fetch(urlKirim);
 
